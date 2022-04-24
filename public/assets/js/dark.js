@@ -2,6 +2,14 @@ const switchIcon = document.querySelector(".mode");
 
 switchIcon.addEventListener("click", changeMode);
 
+if(window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    const e = {};
+    
+    e.target = switchIcon;
+    
+    changeMode(e);
+}
+
 function changeMode(e) {
     if(e.target.classList.contains("fa-moon")) {
         e.target.classList.remove("fa-moon");

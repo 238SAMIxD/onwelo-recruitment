@@ -230,3 +230,7 @@ app.listen(port, host, () => {
   open(`http://${host}:${port}`);
 });
 ```
+
+### Podgląd strony online
+
+Aby przyspieszyć ogląd zadania, rozwiązanie wysłałem pliki na swój serwer, dzięki czemu można obejrzeć stronę pod adresem https://zgrajsie.com/onwelo-recruitment/

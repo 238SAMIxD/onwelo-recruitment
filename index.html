@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html style="scroll-behavior: smooth;" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Onwelo Recruitment Task</title>
+    <meta name="keywords" content="onwelo, recruitment, task, front, end, developer, solution">
+    <meta name="description" content="Solution to the Onwelo Recruitment Task onto Front-End Developer.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="author" content="Samuel Jędrzejewski">
+	<link rel="apple-touch-icon" href="/assets/img/favicon-32x32.png?v37">
+	<link rel="icon" href="/assets/img/favicon.ico?v37" type="image/x-icon">
+	<link rel="shortcut icon" href="/assets/img/favicon.ico?v37" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic&amp;display=swap">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/terminal.css">
+	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/dark.js" defer></script>
+    <script src="assets/js/sreach.js" defer></script>
+</head>
+
+<body class="bg-light">
+    <nav class="navbar navbar-light navbar-expand bg-light navigation-clean" style="flex-wrap: wrap;">
+        <div class="container"><a class="navbar-brand text-dark" href="https://man7.org/index.html" target="_blank" style="margin-right: 0;">man7.org</a><span class="fs-4 text- text-dark">&nbsp;&gt;&nbsp;</span><a class="navbar-brand text-dark" style="margin-right: 0;">Linux</a><span class="fs-4 text-dark">&nbsp;&gt;&nbsp;</span><a class="navbar-brand text-dark" href="https://man7.org/linux/man-pages/index.html" target="_blank" style="margin-right: 0;">man-pages</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#"></button>
+            <div class="collapse navbar-collapse"><i class="fas fa-moon mode ms-auto fa-2x me-2 p-2 text-dark"></i><a class="btn btn-primary ms-auto" role="button" href="http://man7.org/training/">Linux/UNIX system programming training<br></a></div>
+        </div>
+    </nav>
+    <header class="text-center text-white masthead" style="background: url(&quot;assets/img/terminal.gif&quot;) no-repeat;background-size: cover;">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 mx-auto position-relative">
+                    <h1 class="mb-5">ls(1)&nbsp;— Linux manual page</h1>
+                </div>
+                <div class="col-md-10 col-lg-8 col-xl-7 mx-auto position-relative">
+                    <form>
+                        <div class="row">
+                            <div class="col-12 col-md-9 mb-2 mb-md-0"><input class="form-control form-control-lg bg-light" type="text" id="q" placeholder="Search online pages"></div>
+                            <div class="col-12 col-md-3"><button class="btn btn-primary btn-lg" type="submit">Search</button></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="text-center bg-light features-icons">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <nav class="navbar navbar-light navbar-expand-md py-3" style="position: static;top: 0;">
+                        <div class="container"><a class="navbar-brand d-flex align-items-center" href="#"><span class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon"><i class="fas fa-arrow-up"></i></span><span><a class="nav-link active" href="#">Top</a></span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                            <div class="collapse navbar-collapse" id="navcol-2">
+                                <ul class="navbar-nav ms-auto text-dark" style="align-items: center;">
+                                    <li class="nav-item"><a class="nav-link active text-dark" href="#name">Name</a></li>
+                                    <li class="nav-item"><a class="nav-link active text-dark" href="#synopsis">Synopsis</a></li>
+                                    <li class="nav-item"><a class="nav-link active text-dark" href="#description">Description</a></li>
+                                    <li class="nav-item"><a class="nav-link active text-dark" href="#author">Author</a></li>
+                                    <li class="nav-item"><a class="nav-link active text-dark" href="#bugs">Reporting Bugs</a></li>
+                                    <li class="nav-item"><a class="nav-link active text-dark" href="#copyright">Copyright</a></li>
+                                    <li class="nav-item"><a class="nav-link active text-dark" href="#also">See Also</a></li>
+                                    <li class="nav-item"></li>
+                                </ul><a class="btn btn-primary ms-md-2" role="button" href="#colophon">Colophon</a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="showcase bg-light">
+        <div class="container text-center" style="margin-bottom: 3em;display: flex;justify-content: center;">
+            <div class="row text-dark" style="flex-wrap: nowrap;justify-content: space-between;align-items: center;width: inherit;">
+                <div class="col-md-4" style="width: 20%;">
+                    <p class="fs-4 fw-bold">LS(1)</p>
+                </div>
+                <div class="col-md-4" style="width: 60%;text-align: center;">
+                    <p class="fs-4 fw-bold" style="text-align: center;">User Commands</p>
+                </div>
+                <div class="col-md-4" style="width: 20%;">
+                    <p class="fs-4 fw-bold">LS(1)</p>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid p-0">
+            <h2 id="name" style="text-align: center;">Name</h2>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">ls</h3><code class="lead mb-0"><br>list directory contents<br></code>
+                </div>
+                <div class="col-lg-6 text-white order-lg-2 showcase-img sandbox"><span></span><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span><br/>
+    <span class="audio">example_audio_file.mp3</span>
+    <span>example_backup_file~</span> 
+    <span class="compressed">example_compressed_file.tgz</span> 
+    <span class="dir">example_dir</span> 
+    <span class="exec">example_exec_file.sh</span>
+    <span class="fifo">example_fifo_file</span>
+    <span>example_file</span> 
+    <span>'example file with spaces'</span>  
+    <span class="image">example_image_file.jpg</span>
+    <span class="link">example_link_file</span>
+    <span class="socket">example_socket_file</span>
+    <span>example_text_file.txt</span> 
+</code></div>
+            </div>
+            <h2 id="synopsis" style="text-align: center;">Synopsis</h2>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">Usage</h3><code class="lead mb-0"><br><strong>ls&nbsp;</strong>[<em>OPTION</em>]... [<em>FILE</em>]...<br></code>
+                </div>
+                <div class="col-lg-6 text-white showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">--help</span><br/>
+    <span>Usage: ls [OPTION]... [FILE]...</span> 
+</code></div>
+            </div>
+            <h2 id="description" style="text-align: center;">Description</h2>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text"><code class="lead mb-0">List information about the FILEs (the current directory by<br>default). Sort entries alphabetically if none of&nbsp;<strong>-cftuvSUX&nbsp;</strong>nor<br><strong>--sort&nbsp;</strong>is specified.<br><br>Mandatory arguments to long options are mandatory for short<br>options too.<br></code></div>
+                <div class="col-lg-6 text-white order-lg-2 showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">--help</span><br/>
+    <span>List information about the FILEs (the current directory by default).</span> 
+    <span>Sort entries alphabetically if none of -cftuvSUX nor --sort is specified.</span> 
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark"><strong>-a</strong>, <strong>--all</strong><br></h3><code class="lead mb-0"><br>do not ignore entries starting with .<br></code>
+                </div>
+                <div class="col-lg-6 text-white showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">-a</span><br/>
+    <span class="dir">.</span> 
+    <span class="dir">..</span> 
+    <span class="audio">example_audio_file.mp3</span> 
+    <span>example_backup_file~</span> 
+    <span class="compressed">example_compressed_file.tgz</span> 
+    <span class="dir">example_dir</span> 
+    <span class="exec">example_exec_file.sh</span>
+    <span class="fifo">example_fifo_file</span> 
+    <span>example_file</span> 
+    <span>'example file with spaces'</span> 
+    <span class="dir">.example_hidden_dir</span> 
+    <span>.example_hidden_file</span> 
+    <span class="image">example_image_file.jpg</span> 
+    <span class="link">example_link_file</span> 
+    <span class="socket">example_socket_file</span> 
+    <span>example_text_file.txt</span> 
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark"><strong>-A</strong>, <strong>--almost-all</strong><br></h3><code class="lead mb-0"><br>do not list implied . and ..<br></code>
+                </div>
+                <div class="col-lg-6 text-white order-lg-2 showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">-A</span><br/>
+    <span class="audio">example_audio_file.mp3</span> 
+    <span>example_backup_file~</span> 
+    <span class="compressed">example_compressed_file.tgz</span> 
+    <span class="dir">example_dir</span> 
+    <span class="exec">example_exec_file.sh</span>
+    <span class="fifo">example_fifo_file</span>  
+    <span>example_file</span> 
+    <span>'example file with spaces'</span> 
+    <span class="dir">.example_hidden_dir</span> 
+    <span>.example_hidden_file</span> 
+    <span class="image">example_image_file.jpg</span> 
+    <span class="link">example_link_file</span> 
+    <span class="socket">example_socket_file</span> 
+    <span>example_text_file.txt</span> 
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark"><strong>--author</strong><br></h3><code class="lead mb-0"><br>with <strong>-l</strong>, print the author of each file<br></code>
+                </div>
+                <div class="col-lg-6 text-white showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">-l --author</span><br/>
+    <span>total 4</span><br/>
+    -rw-r--r-- 1 kali kali kali    0 Apr 24 09:22  <span class="audio">example_audio_file.mp3</span><br/>
+    -rw-r--r-- 1 kali kali kali    0 Apr 23 17:10   <span>example_backup_file~</span><br/>
+    -rw-r--r-- 1 kali kali kali    0 Apr 23 20:14 <span class="compressed">example_compressed_file.tgz</span><br/>
+    drwxr-xr-x 2 kali kali kali 4096 Apr 23 20:22 <span class="dir">example_dir</span><br/>
+    -rwxr-xr-x 1 kali kali kali    0 Apr 23 14:48 <span class="exec">example_exec_file.sh</span><br/>
+    prw-r--r-- 1 kali kali kali    0 Apr 24 09:24  <span class="fifo">example_fifo_file</span><br/>
+    -rw-r--r-- 1 kali kali kali    0 Apr 23 20:27 <span>example_file</span><br/>
+    -rw-r--r-- 1 kali kali kali    0 Apr 23 16:56 <span>'example file with spaces'</span><br/>
+    -rw-r--r-- 1 kali kali kali    0 Apr 23 14:49 <span class="image">example_image_file.jpg</span><br/>
+    lrwxrwxrwx 1 kali kali kali    7 Apr 24 09:42  <span class="link">example_link_file</span> -> ../link<br/>
+    srwxr-xr-x 1 kali kali kali    0 Apr 24 09:27  <span class="socket">example_socket_file</span><br/>
+    -rw-r--r-- 1 kali kali kali    0 Apr 23 14:49 <span>example_text_file.txt</span><br/>
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark"><strong>-b,&nbsp;--escape</strong><br></h3><code class="lead mb-0"><br>print C-style escapes for nongraphic characters<br></code>
+                </div>
+                <div class="col-lg-6 text-white order-lg-2 showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">-b</span><br/>
+    <span class="audio">example_audio_file.mp3</span> 
+    <span>example_backup_file~</span> 
+    <span class="compressed">example_compressed_file.tgz</span> 
+    <span class="dir">example_dir</span> 
+    <span class="exec">example_exec_file.sh</span> 
+    <span class="fifo">example_fifo_file</span> 
+    <span>example_file</span> 
+    <span>example\ file\ with\ spaces</span> 
+    <span class="image">example_image_file.jpg</span> 
+    <span class="link">example_link_file</span> 
+    <span class="socket">example_socket_file</span> 
+    <span>example_text_file.txt</span> 
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">--block-size=<em>SIZE</em></h3><code class="lead mb-0"><br>with <strong>-l</strong>, scale sizes by <em>SIZE</em>&nbsp;when printing them; e.g.,<br> '--block-size=<em>M</em>'; see <em>SIZE</em>&nbsp;format below<br></code>
+                </div>
+                <div class="col-lg-6 text-white showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">-l --block-size=2</span><br/>
+    <span>total 2048</span><br/>
+    -rw-r--r-- 1 kali kali    0 Apr 24 09:22  <span class="audio">example_audio_file.mp3</span><br/>
+    -rw-r--r-- 1 kali kali    0 Apr 23 17:10   <span>example_backup_file~</span><br/>
+    -rw-r--r-- 1 kali kali    0 Apr 23 20:14 <span class="compressed">example_compressed_file.tgz</span><br/>
+    drwxr-xr-x 2 kali kali 2048 Apr 23 20:22 <span class="dir">example_dir</span><br/>
+    -rwxr-xr-x 1 kali kali    0 Apr 23 14:48 <span class="exec">example_exec_file.sh</span><br/>
+    prw-r--r-- 1 kali kali    0 Apr 24 09:24  <span class="fifo">example_fifo_file</span><br/>
+    -rw-r--r-- 1 kali kali    0 Apr 23 20:27 <span>example_file</span><br/>
+    -rw-r--r-- 1 kali kali    0 Apr 23 16:56 <span>'example file with spaces'</span><br/>
+    -rw-r--r-- 1 kali kali    0 Apr 23 14:49 <span class="image">example_image_file.jpg</span><br/>
+    lrwxrwxrwx 1 kali kali    4 Apr 24 09:42  <span class="link">example_link_file</span> -> ../link<br/>
+    srwxr-xr-x 1 kali kali    0 Apr 24 09:27  <span class="socket">example_socket_file</span><br/>
+    -rw-r--r-- 1 kali kali    0 Apr 23 14:49 <span>example_text_file.txt</span><br/>
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark"><strong>-B</strong>, <strong>--ignore-backups</strong><br></h3><code class="lead mb-0"><br>do not list implied entries ending with ~<br></code>
+                </div>
+                <div class="col-lg-6 text-white order-lg-2 showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">-B</span><br/>
+    <span class="audio">example_audio_file.mp3</span> 
+    <span class="compressed">example_compressed_file.tgz</span> 
+    <span class="dir">example_dir</span> 
+    <span class="exec">example_exec_file.sh</span> 
+    <span class="fifo">example_fifo_file</span> 
+    <span>example_file</span> 
+    <span>'example file with spaces'</span> 
+    <span class="image">example_image_file.jpg</span> 
+    <span class="link">example_link_file</span> 
+    <span class="socket">example_socket_file</span> 
+    <span>example_text_file.txt</span> 
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">-c</h3><code class="lead mb-0"><br>with <strong>-lt</strong>: sort by, and show, ctime (time of last<br> modification of file status information); with <strong>-l</strong>: show<br> ctime and sort by name; otherwise: sort by ctime, newest<br> first<br></code>
+                </div>
+                <div class="col-lg-6 text-white showcase-img sandbox"><span></span><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">-c -lt</span><br/>
+    <span>total 4</span><br/>
+    lrwxrwxrwx 1 kali kali    7 Apr 24 09:42  <span class="link">example_link_file</span> -> ../link<br/>
+srwxr-xr-x 1 kali kali    0 Apr 24 09:27  <span class="socket">example_socket_file</span><br/>
+prw-r--r-- 1 kali kali    0 Apr 24 09:24  <span class="fifo">example_fifo_file</span><br/>
+    -rw-r--r-- 1 kali kali    0 Apr 24 09:22 <span class="audio">example_audio_file.mp3</span><br/>
+    -rw-r--r-- 1 kali kali    0 Apr 23 20:27 <span>example_file</span><br/>
+    -rw-r--r-- 1 kali kali    0 Apr 23 20:14 <span class="compressed">example_compressed_file.tgz</span><br/>
+    -rwxr-xr-x 1 kali kali    0 Apr 23 14:48 <span class="exec">example_exec_file</span><br/>
+    -rw-r--r-- 1 kali kali    0 Apr 23 14:49 <span>example_text_file.txt</span><br/>
+    -rw-r--r-- 1 kali kali    0 Apr 23 14:49 <span class="image">example_image_file.jpg</span><br/>
+    -rw-r--r-- 1 kali kali    0 Apr 23 17:10   <span>example_backup_file~</span><br/>
+    drwxr-xr-x 2 kali kali 4096 Apr 23 20:22 <span class="dir">example_dir</span><br/>
+    -rw-r--r-- 1 kali kali    0 Apr 23 16:56 <span>'example file with spaces'</span><br/>
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">-C</h3><code class="lead mb-0"><br>list entries by columns<br></code>
+                </div>
+                <div class="col-lg-6 text-white order-lg-2 showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">-C</span><br/>
+    <span class="audio">example_audio_file.mp3</span> 
+    <span class="compressed">example_compressed_file.tgz</span> 
+    <span class="dir">example_dir</span> 
+    <span class="exec">example_exec_file.sh</span> 
+    <span class="fifo">example_fifo_file</span> 
+    <span>example_file</span> 
+    <span>'example file with spaces'</span> 
+    <span class="image">example_image_file.jpg</span> 
+    <span class="link">example_link_file</span> 
+    <span class="socket">example_socket_file</span> 
+    <span>example_text_file.txt</span> 
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">--color[=<em>WHEN</em>]</h3><code class="lead mb-0"><br>colorize the output; WHEN can be 'always' (default if<br> omitted), 'auto', or 'never'; more info below<br></code>
+                </div>
+                <div class="col-lg-6 text-white showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">--color=never</span><br/>
+    <span>example_audio_file.mp3</span>
+    <span>example_backup_file~</span>
+    <span>example_compressed_file.tgz</span> 
+    <span>example_dir</span> 
+    <span>example_exec_file.sh</span> 
+    <span>example_fifo_file</span> 
+    <span>example_file</span> 
+    <span>'example file with spaces'</span> 
+    <span>example_image_file.jpg</span> 
+    <span>example_link_file</span> 
+    <span>example_socket_file</span> 
+    <span>example_text_file.txt</span> 
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">-d, --directory</h3><code class="lead mb-0"><br>list directories themselves, not their contents<br></code>
+                </div>
+                <div class="col-lg-6 text-white order-lg-2 showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">-d</span><br/>
+    <span class="dir">.</span> 
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">-D, --dired</h3><code class="lead mb-0"><br>generate output designed for Emacs' dired mode<br></code>
+                </div>
+                <div class="col-lg-6 text-white showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">-D</span><br/>
+    <span class="audio">example_audio_file.mp3</span> 
+    <span class="compressed">example_compressed_file.tgz</span> 
+    <span class="dir">example_dir</span> 
+    <span class="exec">example_exec_file.sh</span> 
+    <span class="fifo">example_fifo_file</span> 
+    <span>example_file</span> 
+    <span>'example file with spaces'</span> 
+    <span class="image">example_image_file.jpg</span> 
+    <span class="link">example_link_file</span> 
+    <span class="socket">example_socket_file</span> 
+    <span>example_text_file.txt</span> 
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">-f</h3><code class="lead mb-0"><br>do not sort, enable <strong>-aU</strong>, disable <strong>-ls --color</strong><br></code>
+                </div>
+                <div class="col-lg-6 text-white order-lg-2 showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">-f</span><br/>
+    <span>example_fifo_file</span> 
+    <span>example_link_file</span> 
+    <span>example_image_file.jpg</span> 
+    <span>example_text_file.txt</span> 
+    <span>.</span> 
+    <span>.example_hidden_file</span> 
+    <span>example_audio_file.mp3</span> 
+    <span>example_file</span> 
+    <span>example_compressed_file.tgz</span> 
+    <span>'example file with spaces'</span> 
+    <span>example_backup_file~</span> 
+    <span>.example_hidden_dir'</span> 
+    <span>example_dir</span> 
+    <span>example_exec_file.sh</span> 
+    <span>..</span> 
+    <span>example_socket_file</span> 
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">-F, --classify</h3><code class="lead mb-0"><br>append indicator (one of */=&gt;@|) to entries<br></code>
+                </div>
+                <div class="col-lg-6 text-white showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">-F</span><br/>
+    <span class="audio">example_audio_file.mp3</span> 
+    <span>example_backup_file~</span>
+    <span class="compressed">example_compressed_file.tgz</span> 
+    <span class="dir">example_dir</span>/ 
+    <span class="exec">example_exec_file.sh</span>* 
+    <span class="fifo">example_fifo_file</span>| 
+    <span>example_file</span> 
+    <span>'example file with spaces'</span> 
+    <span class="image">example_image_file.jpg</span> 
+    <span class="link">example_link_file</span>@ 
+    <span class="socket">example_socket_file</span>= 
+    <span>example_text_file.txt</span> 
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">--file-type</h3><code class="lead mb-0"><br>likewise, except do not append '*'<br></code>
+                </div>
+                <div class="col-lg-6 text-white order-lg-2 showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">--file-type</span><br/>
+    <span class="audio">example_audio_file.mp3</span> 
+    <span>example_backup_file~</span>
+    <span class="compressed">example_compressed_file.tgz</span> 
+    <span class="dir">example_dir</span>/ 
+    <span class="exec">example_exec_file.sh</span> 
+    <span class="fifo">example_fifo_file</span>| 
+    <span>example_file</span> 
+    <span>'example file with spaces'</span> 
+    <span class="image">example_image_file.jpg</span> 
+    <span class="link">example_link_file</span>@ 
+    <span class="socket">example_socket_file</span>= 
+    <span>example_text_file.txt</span> 
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">--format=<em>WORD</em></h3><code class="lead mb-0"><br>across <strong>-x</strong>, commas <strong>-m</strong>, horizontal <strong>-x</strong>, long <strong>-l</strong>,<br> single-column <strong>-1</strong>, verbose <strong>-l</strong>, vertical <strong>-C</strong><br></code>
+                </div>
+                <div class="col-lg-6 text-white showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">--format=commas</span><br/>
+    <span class="audio">example_audio_file.mp3</span>,
+    <span>example_backup_file~</span>,
+    <span class="compressed">example_compressed_file.tgz</span>, 
+    <span class="dir">example_dir</span>, 
+    <span class="exec">example_exec_file.sh</span>, 
+    <span class="fifo">example_fifo_file</span>, 
+    <span>example_file</span>, 
+    <span>'example file with spaces'</span>, 
+    <span class="image">example_image_file.jpg</span>, 
+    <span class="link">example_link_file</span>, 
+    <span class="socket">example_socket_file</span>, 
+    <span>example_text_file.txt</span> 
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">--full-time</h3><code class="lead mb-0"><br>like <strong>-l --time-style</strong>=<em>full-iso</em><br></code>
+                </div>
+                <div class="col-lg-6 text-white order-lg-2 showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">--full-time --time-style=+%d-%m-%Y\ %H:%M:%S.%s</span><br/>
+    <span>total 2048</span><br/>
+    -rw-r--r-- 1 kali kali    0 24-04-2022 09:22:14.1650792134  <span class="audio">example_audio_file.mp3</span><br/>
+    -rw-r--r-- 1 kali kali    0 23-04-2022 17:10:09.1650733809 <span>example_backup_file~</span><br/>
+    -rw-r--r-- 1 kali kali    0 23-04-2022 20:14:08.1650744848 <span class="compressed">example_compressed_file.tgz</span><br/>
+    drwxr-xr-x 2 kali kali 4096 23-04-2022 20:22:40.1650745360 <span class="dir">example_dir</span><br/>
+    -rwxr-xr-x 1 kali kali    23-04-2022 14:48:53.1650725333 <span class="exec">example_exec_file.sh</span><br/>
+    prw-r--r-- 1 kali kali    0 24-04-2022 09:24:38.1650792278  <span class="fifo">example_fifo_file</span><br/>
+    -rw-r--r-- 1 kali kali    23-04-2022 20:27:13.1650745633 <span>example_file</span><br/>
+    -rw-r--r-- 1 kali kali    23-04-2022 16:56:26.1650732986 <span>'example file with spaces'</span><br/>
+    -rw-r--r-- 1 kali kali    23-04-2022 14:49:04.1650725344 <span class="image">example_image_file.jpg</span><br/>
+    lrwxrwxrwx 1 kali kali    7 24-04-2022 09:42:37.1650793357  <span class="link">example_link_file</span> -> ../link<br/>
+    srwxr-xr-x 1 kali kali    0 24-04-2022 09:27:46.1650792466  <span class="socket">example_socket_file</span><br/>
+    -rw-r--r-- 1 kali kali    23-04-2022 14:49:00.1650725340 <span>example_text_file.txt</span><br/>
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">-g</h3><code class="lead mb-0"><br>like <strong>-l</strong>, but do not list owner<br></code>
+                </div>
+                <div class="col-lg-6 text-white showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">-g</span><br/>
+    <span>total 4</span><br/>
+    -rw-r--r-- 1 kali    0 Apr 24 09:22  <span class="audio">example_audio_file.mp3</span><br/>
+    -rw-r--r-- 1 kali    0 Apr 23 17:10   <span>example_backup_file~</span><br/>
+    -rw-r--r-- 1 kali    0 Apr 23 20:14 <span class="compressed">example_compressed_file.tgz</span><br/>
+    drwxr-xr-x 2 kali 4096 Apr 23 20:22 <span class="dir">example_dir</span><br/>
+    -rwxr-xr-x 1 kali    0 Apr 23 14:48 <span class="exec">example_exec_file.sh</span><br/>
+    prw-r--r-- 1 kali    0 Apr 24 09:24  <span class="fifo">example_fifo_file</span><br/>
+    -rw-r--r-- 1 kali    0 Apr 23 20:27 <span>example_file</span><br/>
+    -rw-r--r-- 1 kali    0 Apr 23 16:56 <span>'example file with spaces'</span><br/>
+    -rw-r--r-- 1 kali    0 Apr 23 14:49 <span class="image">example_image_file.jpg</span><br/>
+    lrwxrwxrwx 1 kali    7 Apr 24 09:42  <span class="link">example_link_file</span> -> ../link<br/>
+    srwxr-xr-x 1 kali    0 Apr 24 09:27  <span class="socket">example_socket_file</span><br/>
+    -rw-r--r-- 1 kali    0 Apr 23 14:49 <span>example_text_file.txt</span><br/>
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">--group-directories-first</h3><code class="lead mb-0"><br>group directories before files;<br><br> can be augmented with a <strong>--sort </strong>option, but any use of<br> <strong>--sort</strong>=<em>none</em> (<strong>-U</strong>) disables grouping<br></code>
+                </div>
+                <div class="col-lg-6 text-white order-lg-2 showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">--group-directories-first</span><br/>
+    <span class="dir">example_dir</span> 
+    <span class="audio">example_audio_file.mp3</span> 
+    <span class="compressed">example_compressed_file.tgz</span> 
+    <span class="exec">example_exec_file.sh</span> 
+    <span class="fifo">example_fifo_file</span> 
+    <span>example_file</span> 
+    <span>'example file with spaces'</span> 
+    <span class="image">example_image_file.jpg</span> 
+    <span class="link">example_link_file</span> 
+    <span class="socket">example_socket_file</span> 
+    <span>example_text_file.txt</span> 
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">-G, --no-group</h3><code class="lead mb-0"><br>in a long listing, don't print group names<br></code>
+                </div>
+                <div class="col-lg-6 text-white showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">-l -G</span><br/>
+    <span>total 4</span><br/>
+    -rw-r--r-- 1 kali    0 Apr 24 09:22  <span class="audio">example_audio_file.mp3</span><br/>
+    -rw-r--r-- 1 kali    0 Apr 23 17:10   <span>example_backup_file~</span><br/>
+    -rw-r--r-- 1 kali    0 Apr 23 20:14 <span class="compressed">example_compressed_file.tgz</span><br/>
+    drwxr-xr-x 2 kali 4096 Apr 23 20:22 <span class="dir">example_dir</span><br/>
+    -rwxr-xr-x 1 kali    0 Apr 23 14:48 <span class="exec">example_exec_file.sh</span><br/>
+    prw-r--r-- 1 kali    0 Apr 24 09:24  <span class="fifo">example_fifo_file</span><br/>
+    -rw-r--r-- 1 kali    0 Apr 23 20:27 <span>example_file</span><br/>
+    -rw-r--r-- 1 kali    0 Apr 23 16:56 <span>'example file with spaces'</span><br/>
+    -rw-r--r-- 1 kali    0 Apr 23 14:49 <span class="image">example_image_file.jpg</span><br/>
+    lrwxrwxrwx 1 kali    7 Apr 24 09:42  <span class="link">example_link_file</span> -> ../link<br/>
+    srwxr-xr-x 1 kali    0 Apr 24 09:27  <span class="socket">example_socket_file</span><br/>
+    -rw-r--r-- 1 kali    0 Apr 23 14:49 <span>example_text_file.txt</span><br/>
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">-h, --human-readable</h3><code class="lead mb-0"><br>with <strong>-l </strong>and <strong>-s</strong>, print sizes like 1K 234M 2G etc.<br></code>
+                </div>
+                <div class="col-lg-6 text-white order-lg-2 showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">-l -h</span><br/>
+    <span>total 4.0K</span><br/>
+    -rw-r--r-- 1 kali kali    0 Apr 24 09:22  <span class="audio">example_audio_file.mp3</span><br/>
+    -rw-r--r-- 1 kali kali    0 Apr 23 17:10   <span>example_backup_file~</span><br/>
+    -rw-r--r-- 1 kali kali    0 Apr 23 20:14 <span class="compressed">example_compressed_file.tgz</span><br/>
+    drwxr-xr-x 2 kali kali 4.0K Apr 23 20:22 <span class="dir">example_dir</span><br/>
+    -rwxr-xr-x 1 kali kali    0 Apr 23 14:48 <span class="exec">example_exec_file.sh</span><br/>
+    prw-r--r-- 1 kali kali    0 Apr 24 09:24  <span class="fifo">example_fifo_file</span><br/>
+    -rw-r--r-- 1 kali kali    0 Apr 23 20:27 <span>example_file</span><br/>
+    -rw-r--r-- 1 kali kali    0 Apr 23 16:56 <span>'example file with spaces'</span><br/>
+    -rw-r--r-- 1 kali kali    0 Apr 23 14:49 <span class="image">example_image_file.jpg</span><br/>
+    lrwxrwxrwx 1 kali kali    7 Apr 24 09:42  <span class="link">example_link_file</span> -> ../link<br/>
+    srwxr-xr-x 1 kali kali    0 Apr 24 09:27  <span class="socket">example_socket_file</span><br/>
+    -rw-r--r-- 1 kali kali    0 Apr 23 14:49 <span>example_text_file.txt</span><br/>
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">--si</h3><code class="lead mb-0"><br>likewise, but use powers of 1000 not 1024<br></code>
+                </div>
+                <div class="col-lg-6 text-white showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">-l --si</span><br/>
+    <span>total 4.1K</span><br/>
+    -rw-r--r-- 1 kali kali    0 Apr 24 09:22  <span class="audio">example_audio_file.mp3</span><br/>
+    -rw-r--r-- 1 kali kali    0 Apr 23 17:10   <span>example_backup_file~</span><br/>
+    -rw-r--r-- 1 kali kali    0 Apr 23 20:14 <span class="compressed">example_compressed_file.tgz</span><br/>
+    drwxr-xr-x 2 kali kali 4.1K Apr 23 20:22 <span class="dir">example_dir</span><br/>
+    -rwxr-xr-x 1 kali kali    0 Apr 23 14:48 <span class="exec">example_exec_file.sh</span><br/>
+    prw-r--r-- 1 kali kali    0 Apr 24 09:24  <span class="fifo">example_fifo_file</span><br/>
+    -rw-r--r-- 1 kali kali    0 Apr 23 20:27 <span>example_file</span><br/>
+    -rw-r--r-- 1 kali kali    0 Apr 23 16:56 <span>'example file with spaces'</span><br/>
+    -rw-r--r-- 1 kali kali    0 Apr 23 14:49 <span class="image">example_image_file.jpg</span><br/>
+    lrwxrwxrwx 1 kali kali    7 Apr 24 09:42  <span class="link">example_link_file</span> -> ../link<br/>
+    srwxr-xr-x 1 kali kali    0 Apr 24 09:27  <span class="socket">example_socket_file</span><br/>
+    -rw-r--r-- 1 kali kali    0 Apr 23 14:49 <span>example_text_file.txt</span><br/>
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">-H, --<strong>dereference-command-line</strong><br><strong>or&nbsp;</strong><br><strong>--dereference-command-line-symlink-to-dir</strong><br></h3><code class="lead mb-0"><br>follow symbolic links listed on the command line<br>or<br>follow each command line symbolic link that points to a directory<br></code>
+                </div>
+                <div class="col-lg-6 text-white order-lg-2 showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">-H</span><br/>
+    <span class="audio">example_audio_file.mp3</span> 
+    <span>example_backup_file~</span> 
+    <span class="compressed">example_compressed_file.tgz</span> 
+    <span class="dir">example_dir</span> 
+    <span class="exec">example_exec_file.sh</span> 
+    <span class="fifo">example_fifo_file</span> 
+    <span>example_file</span> 
+    <span>'example file with spaces'</span> 
+    <span class="image">example_image_file.jpg</span> 
+    <span class="link">example_link_file</span> 
+    <span class="socket">example_socket_file</span> 
+    <span>example_text_file.txt</span> 
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">--hide=<em>PATTERN</em></h3><code class="lead mb-0"><br>do not list implied entries matching shell&nbsp;<em>PATTERN<br></em>(overridden by <strong>-a </strong>or <strong>-A</strong>)<br></code>
+                </div>
+                <div class="col-lg-6 text-white showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">--hide=*.*</span><br/>
+    <span>example_backup_file~</span> 
+    <span class="dir">example_dir</span> 
+    <span class="fifo">example_fifo_file</span> 
+    <span>example_file</span> 
+    <span>'example file with spaces'</span> 
+    <span class="link">example_link_file</span> 
+    <span class="socket">example_socket_file</span> 
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">--hyper-link[=<em>WHEN</em>]</h3><code class="lead mb-0"><br>hyperlink file names; <em>WHEN</em>&nbsp;can be 'always' (default if<br> omitted), 'auto', or 'never<br></code>
+                </div>
+                <div class="col-lg-6 text-white order-lg-2 showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">--hyperlink=never</span><br/>
+    <span class="audio">example_audio_file.mp3</span> 
+    <span>example_backup_file~</span> 
+    <span class="compressed">example_compressed_file.tgz</span> 
+    <span class="dir">example_dir</span> 
+    <span class="exec">example_exec_file.sh</span> 
+    <span class="fifo">example_fifo_file</span> 
+    <span>example_file</span> 
+    <span>'example file with spaces'</span> 
+    <span class="image">example_image_file.jpg</span> 
+    <span class="link">example_link_file</span> 
+    <span class="socket">example_socket_file</span> 
+    <span>example_text_file.txt</span> 
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">--<strong>indicator-style</strong>=<em>WORD</em><br></h3><code class="lead mb-0"><br>append indicator with style <em>WORD</em>&nbsp;to entry names: none<br> (default), slash (<strong>-p</strong>), file-type (<strong>--file-type</strong>), classify<br> (<strong>-F</strong>)<br></code>
+                </div>
+                <div class="col-lg-6 text-white showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">--indicator-style=slash</span><br/>
+    <span class="audio">example_audio_file.mp3</span> 
+    <span>example_backup_file~</span> 
+    <span class="compressed">example_compressed_file.tgz</span> 
+    <span class="dir">example_dir</span>/ 
+    <span class="exec">example_exec_file.sh</span> 
+    <span class="fifo">example_fifo_file</span> 
+    <span>example_file</span> 
+    <span>'example file with spaces'</span> 
+    <span class="image">example_image_file.jpg</span> 
+    <span class="link">example_link_file</span> 
+    <span class="socket">example_socket_file</span> 
+    <span>example_text_file.txt</span> 
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">-i, --inode</h3><code class="lead mb-0"><br>print the index number of each file<br></code>
+                </div>
+                <div class="col-lg-6 text-white order-lg-2 showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">-i</span><br/>
+    1063848 <span class="audio">example_audio_file.mp3</span> 
+    1064698 <span>example_backup_file~</span> 
+    1064585 <span class="compressed">example_compressed_file.tgz</span> 
+    1069316 <span class="dir">example_dir</span> 
+    1064788 <span class="exec">example_exec_file.sh</span> 
+    1064006 <span class="fifo">example_fifo_file</span> 
+    1064576 <span>example_file</span> 
+    1064707 <span>'example file with spaces'</span> 
+    1069278 <span class="image">example_image_file.jpg</span> 
+    1063999 <span class="link">example_link_file</span> 
+    1069387 <span class="socket">example_socket_file</span> 
+    1069277 <span>example_text_file.txt</span> 
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">-I, --ignore=<em>PATTERN</em></h3><code class="lead mb-0"><br>do not list implied entries matching shell&nbsp;<em>PATTERN</em><br></code>
+                </div>
+                <div class="col-lg-6 text-white showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">-Iexample_*_file*</span><br/>
+    <span class="dir">example_dir</span> 
+    <span>example_file</span> 
+    <span>'example file with spaces'</span> 
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">-k, --kibibytes</h3><code class="lead mb-0"><br>default to 1024-byte blocks for disk usage; used only with<br> <strong>-s </strong>and per directory totals<br></code>
+                </div>
+                <div class="col-lg-6 text-white order-lg-2 showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">-s -k</span><br/>
+    total 4<br/>
+    0 <span class="audio">example_audio_file.mp3</span> 
+    0 <span>example_backup_file~</span> 
+    0 <span class="compressed">example_compressed_file.tgz</span> 
+    4 <span class="dir">example_dir</span> 
+    0 <span class="exec">example_exec_file.sh</span> 
+    0 <span class="fifo">example_fifo_file</span> 
+    0 <span>example_file</span> 
+    0 <span>'example file with spaces'</span> 
+    0 <span class="image">example_image_file.jpg</span> 
+    0 <span class="link">example_link_file</span> 
+    0 <span class="socket">example_socket_file</span> 
+    0 <span>example_text_file.txt</span> 
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">-l</h3><code class="lead mb-0"><br>use a long listing format<br></code>
+                </div>
+                <div class="col-lg-6 text-white showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">-l</span><br/>
+    <span>total 4</span><br/>
+    -rw-r--r-- 1 kali kali    0 Apr 24 09:22  <span class="audio">example_audio_file.mp3</span><br/>
+    -rw-r--r-- 1 kali kali    0 Apr 23 17:10   <span>example_backup_file~</span><br/>
+    -rw-r--r-- 1 kali kali    0 Apr 23 20:14 <span class="compressed">example_compressed_file.tgz</span><br/>
+    drwxr-xr-x 2 kali kali 4096 Apr 23 20:22 <span class="dir">example_dir</span><br/>
+    -rwxr-xr-x 1 kali kali    0 Apr 23 14:48 <span class="exec">example_exec_file.sh</span><br/>
+    prw-r--r-- 1 kali kali    0 Apr 24 09:24  <span class="fifo">example_fifo_file</span><br/>
+    -rw-r--r-- 1 kali kali    0 Apr 23 20:27 <span>example_file</span><br/>
+    -rw-r--r-- 1 kali kali    0 Apr 23 16:56 <span>'example file with spaces'</span><br/>
+    -rw-r--r-- 1 kali kali    0 Apr 23 14:49 <span class="image">example_image_file.jpg</span><br/>
+    lrwxrwxrwx 1 kali kali    7 Apr 24 09:42  <span class="link">example_link_file</span> -> ../link<br/>
+    srwxr-xr-x 1 kali kali    0 Apr 24 09:27  <span class="socket">example_socket_file</span><br/>
+    -rw-r--r-- 1 kali kali    0 Apr 23 14:49 <span>example_text_file.txt</span><br/>
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">-L, --<strong>dereference</strong><br></h3><code class="lead mb-0"><br>when showing file information for a symbolic link, show<br> information for the file the link references rather than<br> for the link itself<br></code>
+                </div>
+                <div class="col-lg-6 text-white order-lg-2 showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">-L</span><br/>
+    <span class="audio">example_audio_file.mp3</span> 
+    <span>example_backup_file~</span> 
+    <span class="compressed">example_compressed_file.tgz</span> 
+    <span class="dir">example_dir</span> 
+    <span class="exec">example_exec_file.sh</span> 
+    <span class="fifo">example_fifo_file</span> 
+    <span>example_file</span> 
+    <span>'example file with spaces'</span> 
+    <span class="image">example_image_file.jpg</span> 
+    <span>example_link_file</span> 
+    <span class="socket">example_socket_file</span> 
+    <span>example_text_file.txt</span> 
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">-m</h3><code class="lead mb-0"><br>fill width with a comma separated list of entries<br></code>
+                </div>
+                <div class="col-lg-6 text-white showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">-m</span><br/>
+    <span class="audio">example_audio_file.mp3</span>,
+    <span>example_backup_file~</span>,
+    <span class="compressed">example_compressed_file.tgz</span>, 
+    <span class="dir">example_dir</span>, 
+    <span class="exec">example_exec_file.sh</span>, 
+    <span class="fifo">example_fifo_file</span>, 
+    <span>example_file</span>, 
+    <span>'example file with spaces'</span>, 
+    <span class="image">example_image_file.jpg</span>, 
+    <span class="link">example_link_file</span>, 
+    <span class="socket">example_socket_file</span>, 
+    <span>example_text_file.txt</span> 
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">-n, --<strong>numeric-uid-gid</strong><br></h3><code class="lead mb-0"><br>like <strong>-l</strong>, but list numeric user and group IDs<br></code>
+                </div>
+                <div class="col-lg-6 text-white order-lg-2 showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">-n</span><br/>
+    <span>total 4</span><br/>
+    -rw-r--r-- 1 1000 1000    0 Apr 24 09:22  <span class="audio">example_audio_file.mp3</span><br/>
+    -rw-r--r-- 1 1000 1000    0 Apr 23 17:10   <span>example_backup_file~</span><br/>
+    -rw-r--r-- 1 1000 1000    0 Apr 23 20:14 <span class="compressed">example_compressed_file.tgz</span><br/>
+    drwxr-xr-x 2 1000 1000 4096 Apr 23 20:22 <span class="dir">example_dir</span><br/>
+    -rwxr-xr-x 1 1000 1000    0 Apr 23 14:48 <span class="exec">example_exec_file.sh</span><br/>
+    prw-r--r-- 1 1000 1000    0 Apr 24 09:24  <span class="fifo">example_fifo_file</span><br/>
+    -rw-r--r-- 1 1000 1000    0 Apr 23 20:27 <span>example_file</span><br/>
+    -rw-r--r-- 1 1000 1000    0 Apr 23 16:56 <span>'example file with spaces'</span><br/>
+    -rw-r--r-- 1 1000 1000    0 Apr 23 14:49 <span class="image">example_image_file.jpg</span><br/>
+    lrwxrwxrwx 1 1000 1000    7 Apr 24 09:42  <span class="link">example_link_file</span> -> ../link<br/>
+    srwxr-xr-x 1 1000 1000    0 Apr 24 09:27  <span class="socket">example_socket_file</span><br/>
+    -rw-r--r-- 1 1000 1000    0 Apr 23 14:49 <span>example_text_file.txt</span><br/>
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">-N, --literal</h3><code class="lead mb-0"><br>print entry names without quoting<br></code>
+                </div>
+                <div class="col-lg-6 text-white showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">-N</span><br/>
+    <span class="audio">example_audio_file.mp3</span> 
+    <span>example_backup_file~</span> 
+    <span class="compressed">example_compressed_file.tgz</span> 
+    <span class="dir">example_dir</span> 
+    <span class="exec">example_exec_file.sh</span> 
+    <span class="fifo">example_fifo_file</span> 
+    <span>example_file</span> 
+    <span>example file with spaces</span> 
+    <span class="image">example_image_file.jpg</span> 
+    <span class="link">example_link_file</span> 
+    <span class="socket">example_socket_file</span> 
+    <span>example_text_file.txt</span> 
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">-o</h3><code class="lead mb-0"><br>like <strong>-l</strong>, but do not list group information<br></code>
+                </div>
+                <div class="col-lg-6 text-white order-lg-2 showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">-o</span><br/>
+    <span>total 4</span><br/>
+    -rw-r--r-- 1 kali    0 Apr 24 09:22  <span class="audio">example_audio_file.mp3</span><br/>
+    -rw-r--r-- 1 kali    0 Apr 23 17:10   <span>example_backup_file~</span><br/>
+    -rw-r--r-- 1 kali    0 Apr 23 20:14 <span class="compressed">example_compressed_file.tgz</span><br/>
+    drwxr-xr-x 2 kali 4096 Apr 23 20:22 <span class="dir">example_dir</span><br/>
+    -rwxr-xr-x 1 kali    0 Apr 23 14:48 <span class="exec">example_exec_file.sh</span><br/>
+    prw-r--r-- 1 kali    0 Apr 24 09:24  <span class="fifo">example_fifo_file</span><br/>
+    -rw-r--r-- 1 kali    0 Apr 23 20:27 <span>example_file</span><br/>
+    -rw-r--r-- 1 kali    0 Apr 23 16:56 <span>'example file with spaces'</span><br/>
+    -rw-r--r-- 1 kali    0 Apr 23 14:49 <span class="image">example_image_file.jpg</span><br/>
+    lrwxrwxrwx 1 kali    7 Apr 24 09:42  <span class="link">example_link_file</span> -> ../link<br/>
+    srwxr-xr-x 1 kali    0 Apr 24 09:27  <span class="socket">example_socket_file</span><br/>
+    -rw-r--r-- 1 kali    0 Apr 23 14:49 <span>example_text_file.txt</span><br/>
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">-p, --<strong>indicator-style</strong>=<em>slash</em><br></h3><code class="lead mb-0"><br>append / indicator to directories<br></code>
+                </div>
+                <div class="col-lg-6 text-white showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">-p</span><br/>
+    <span class="audio">example_audio_file.mp3</span> 
+    <span>example_backup_file~</span> 
+    <span class="compressed">example_compressed_file.tgz</span> 
+    <span class="dir">example_dir</span>/ 
+    <span class="exec">example_exec_file.sh</span> 
+    <span class="fifo">example_fifo_file</span> 
+    <span>example_file</span> 
+    <span>'example file with spaces'</span> 
+    <span class="image">example_image_file.jpg</span> 
+    <span class="link">example_link_file</span> 
+    <span class="socket">example_socket_file</span> 
+    <span>example_text_file.txt</span> 
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">-q,&nbsp;<strong>--hide-control-chars</strong><br></h3><code class="lead mb-0"><br>print ? instead of nongraphic characters<br></code>
+                </div>
+                <div class="col-lg-6 text-white order-lg-2 showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">-q</span><br/>
+    <span class="audio">example_audio_file.mp3</span> 
+    <span>example_backup_file~</span> 
+    <span class="compressed">example_compressed_file.tgz</span> 
+    <span class="dir">example_dir</span> 
+    <span class="exec">example_exec_file.sh</span> 
+    <span class="fifo">example_fifo_file</span> 
+    <span>example_file</span> 
+    <span>'example file with spaces'</span> 
+    <span class="image">example_image_file.jpg</span> 
+    <span class="link">example_link_file</span> 
+    <span class="socket">example_socket_file</span> 
+    <span>example_text_file.txt</span> 
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">-<strong>-show-control-chars</strong><br></h3><code class="lead mb-0"><br>show nongraphic characters as-is (the default, unless<br> program is 'ls' and output is a terminal)<br></code>
+                </div>
+                <div class="col-lg-6 text-white showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">--show-control-chars</span><br/>
+    <span class="audio">example_audio_file.mp3</span> 
+    <span>example_backup_file~</span> 
+    <span class="compressed">example_compressed_file.tgz</span> 
+    <span class="dir">example_dir</span> 
+    <span class="exec">example_exec_file.sh</span> 
+    <span class="fifo">example_fifo_file</span> 
+    <span>example_file</span> 
+    <span>'example file with spaces'</span> 
+    <span class="image">example_image_file.jpg</span> 
+    <span class="link">example_link_file</span> 
+    <span class="socket">example_socket_file</span> 
+    <span>example_text_file.txt</span> 
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark"><strong>-Q</strong>, <strong>--quote-name</strong><br></h3><code class="lead mb-0"><br>enclose entry names in double quotes<br></code>
+                </div>
+                <div class="col-lg-6 text-white order-lg-2 showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">-Q</span><br/>
+    <span class="audio">"example_audio_file.mp3"</span> 
+    <span>"example_backup_file~"</span> 
+    <span class="compressed">"example_compressed_file.tgz"</span> 
+    <span class="dir">"example_dir"</span> 
+    <span class="exec">"example_exec_file.sh"</span> 
+    <span class="fifo">"example_fifo_file"</span> 
+    <span>"example_file"</span> 
+    <span>"example file with spaces"</span> 
+    <span class="image">"example_image_file.jpg"</span> 
+    <span class="link">"example_link_file"</span> 
+    <span class="socket">"example_socket_file"</span> 
+    <span>"example_text_file.txt"</span> 
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark"><strong>--quoting-style</strong>=<em>WORD</em><br></h3><code class="lead mb-0"><br>use quoting style WORD for entry names: literal, locale,<br> shell, shell-always, shell-escape, shell-escape-always, c,<br> escape (overrides QUOTING_STYLE environment variable)<br></code>
+                </div>
+                <div class="col-lg-6 text-white showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">--quoting-style=locale</span><br/>
+    <span class="audio">‘example_audio_file.mp3’</span> 
+    <span>‘example_backup_file~’</span> 
+    <span class="compressed">‘example_compressed_file.tgz’</span> 
+    <span class="dir">‘example_dir’</span> 
+    <span class="exec">‘example_exec_file.sh’</span> 
+    <span class="fifo">‘example_fifo_file’</span> 
+    <span>‘example_file’</span> 
+    <span>‘example file with spaces’</span> 
+    <span class="image">‘example_image_file.jpg’</span> 
+    <span class="link">‘example_link_file’</span> 
+    <span class="socket">‘example_socket_file’</span> 
+    <span>‘example_text_file.txt’</span> 
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark"><strong>-r</strong>, <strong>--reverse</strong><br></h3><code class="lead mb-0"><br>reverse order while sorting<br></code>
+                </div>
+                <div class="col-lg-6 text-white order-lg-2 showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">-r</span><br/>
+    <span>example_text_file.txt</span> 
+    <span class="socket">example_socket_file</span> 
+    <span class="link">example_link_file</span> 
+    <span class="image">example_image_file.jpg</span> 
+    <span>'example file with spaces'</span> 
+    <span>example_file</span> 
+    <span class="fifo">example_fifo_file</span> 
+    <span class="exec">example_exec_file.sh</span> 
+    <span class="dir">example_dir</span> 
+    <span class="compressed">example_compressed_file.tgz</span> 
+    <span>example_backup_file~</span> 
+    <span class="audio">example_audio_file.mp3</span> 
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark"><strong>-R</strong>, <strong>--recursive</strong><br></h3><code class="lead mb-0"><br>list subdirectories recursively<br></code>
+                </div>
+                <div class="col-lg-6 text-white showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">-R</span><br/>
+    .:<br/>
+    <span class="audio">example_audio_file.mp3</span> 
+    <span>example_backup_file~</span> 
+    <span class="compressed">example_compressed_file.tgz</span> 
+    <span class="dir">example_dir</span> 
+    <span class="exec">example_exec_file.sh</span> 
+    <span class="fifo">example_fifo_file</span> 
+    <span>example_file</span> 
+    <span>'example file with spaces'</span> 
+    <span class="image">example_image_file.jpg</span> 
+    <span class="link">example_link_file</span> 
+    <span class="socket">example_socket_file</span> 
+    <span>example_text_file.txt</span><br/><br/>
+    ./example_dir:<br/>
+    file<br/>
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark"><strong>-s</strong>, <strong>--size</strong><br></h3><code class="lead mb-0"><br>print the allocated size of each file, in blocks<br></code>
+                </div>
+                <div class="col-lg-6 text-white order-lg-2 showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">-s</span><br/>
+    total 4<br/>
+    0 <span class="audio">example_audio_file.mp3</span> 
+    0 <span>example_backup_file~</span> 
+    0 <span class="compressed">example_compressed_file.tgz</span> 
+    4 <span class="dir">example_dir</span> 
+    0 <span class="exec">example_exec_file.sh</span> 
+    0 <span class="fifo">example_fifo_file</span> 
+    0 <span>example_file</span> 
+    0 <span>'example file with spaces'</span> 
+    0 <span class="image">example_image_file.jpg</span> 
+    0 <span class="link">example_link_file</span> 
+    0 <span class="socket">example_socket_file</span> 
+    0 <span>example_text_file.txt</span> 
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">-S</h3><code class="lead mb-0"><br>sort by file size, largest first<br></code>
+                </div>
+                <div class="col-lg-6 text-white showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">-S</span><br/>
+    <span class="dir">example_dir</span> 
+    <span class="link">example_link_file</span> 
+    <span class="audio">example_audio_file.mp3</span> 
+    <span>example_backup_file~</span> 
+    <span class="compressed">example_compressed_file.tgz</span> 
+    <span class="exec">example_exec_file.sh</span> 
+    <span class="fifo">example_fifo_file</span> 
+    <span>example_file</span> 
+    <span>'example file with spaces'</span> 
+    <span class="image">example_image_file.jpg</span> 
+    <span class="socket">example_socket_file</span> 
+    <span>example_text_file.txt</span> 
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">--sort=<em>WORD</em></h3><code class="lead mb-0"><br>sort by&nbsp;<em>WORD</em> instead of name: none (<strong>-U</strong>), size (<strong>-S</strong>), time<br> (<strong>-t</strong>), version (<strong>-v</strong>), extension (<strong>-X</strong>)<br></code>
+                </div>
+                <div class="col-lg-6 text-white order-lg-2 showcase-img sandbox"><span></span><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">--sort=size</span><br/>
+    <span class="dir">example_dir</span> 
+    <span class="link">example_link_file</span> 
+    <span class="audio">example_audio_file.mp3</span> 
+    <span>example_backup_file~</span> 
+    <span class="compressed">example_compressed_file.tgz</span> 
+    <span class="exec">example_exec_file.sh</span> 
+    <span class="fifo">example_fifo_file</span> 
+    <span>example_file</span> 
+    <span>'example file with spaces'</span> 
+    <span class="image">example_image_file.jpg</span> 
+    <span class="socket">example_socket_file</span> 
+    <span>example_text_file.txt</span> 
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">--time=<em>WORD</em></h3><code class="lead mb-0"><br>change the default of using modification times; access<br> time (<strong>-u</strong>): atime, access, use; change time (<strong>-c</strong>): ctime,<br> status; birth time: birth, creation;<br><br> with <strong>-l</strong>,&nbsp;<em>WORD</em> determines which time to show; with<br> <strong>--sort</strong>=<em>time</em>, sort by <em>WORD</em>&nbsp;(newest first)<br></code>
+                </div>
+                <div class="col-lg-6 text-white showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">-l --time=ctime</span><br/>
+    <span>total 4</span><br/>
+    -rw-r--r-- 1 kali kali    0 Apr 24 09:22  <span class="audio">example_audio_file.mp3</span><br/>
+    -rw-r--r-- 1 kali kali    0 Apr 23 20:23   <span>example_backup_file~</span><br/>
+    -rw-r--r-- 1 kali kali    0 Apr 23 20:25 <span class="compressed">example_compressed_file.tgz</span><br/>
+    drwxr-xr-x 2 kali kali 4096 Apr 23 20:22 <span class="dir">example_dir</span><br/>
+    -rwxr-xr-x 1 kali kali    0 Apr 23 20:25 <span class="exec">example_exec_file.sh</span><br/>
+    prw-r--r-- 1 kali kali    0 Apr 24 09:24  <span class="fifo">example_fifo_file</span><br/>
+    -rw-r--r-- 1 kali kali    0 Apr 23 20:27 <span>example_file</span><br/>
+    -rw-r--r-- 1 kali kali    0 Apr 23 16:56 <span>'example file with spaces'</span><br/>
+    -rw-r--r-- 1 kali kali    0 Apr 23 20:25 <span class="image">example_image_file.jpg</span><br/>
+    lrwxrwxrwx 1 kali kali    7 Apr 24 09:42  <span class="link">example_link_file</span> -> ../link<br/>
+    srwxr-xr-x 1 kali kali    0 Apr 24 09:27  <span class="socket">example_socket_file</span><br/>
+    -rw-r--r-- 1 kali kali    0 Apr 23 20:25 <span>example_text_file.txt</span><br/>
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark"><strong>--time-style</strong>=<em>TIME_STYLE</em><br></h3><code class="lead mb-0"><br>time/date format with <strong>-l</strong>; see&nbsp;<em>TIME_STYLE</em> below<br></code>
+                </div>
+                <div class="col-lg-6 text-white order-lg-2 showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">-l --time-style=+%Y</span><br/>
+    <span>total 4</span><br/>
+    -rw-r--r-- 1 kali kali    0 2022  <span class="audio">example_audio_file.mp3</span><br/>
+    -rw-r--r-- 1 kali kali    0 2022   <span>example_backup_file~</span><br/>
+    -rw-r--r-- 1 kali kali    0 2022 <span class="compressed">example_compressed_file.tgz</span><br/>
+    drwxr-xr-x 2 kali kali 4096 2022 <span class="dir">example_dir</span><br/>
+    -rwxr-xr-x 1 kali kali    0 2022 <span class="exec">example_exec_file.sh</span><br/>
+    prw-r--r-- 1 kali kali    0 2022  <span class="fifo">example_fifo_file</span><br/>
+    -rw-r--r-- 1 kali kali    0 2022 <span>example_file</span><br/>
+    -rw-r--r-- 1 kali kali    0 2022 <span>'example file with spaces'</span><br/>
+    -rw-r--r-- 1 kali kali    0 2022 <span class="image">example_image_file.jpg</span><br/>
+    lrwxrwxrwx 1 kali kali    7 2022  <span class="link">example_link_file</span> -> ../link<br/>
+    srwxr-xr-x 1 kali kali    0 2022  <span class="socket">example_socket_file</span><br/>
+    -rw-r--r-- 1 kali kali    0 2022 <span>example_text_file.txt</span><br/>
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">-t</h3><code class="lead mb-0"><br>sort by time, newest first; see <strong>--time</strong><br></code>
+                </div>
+                <div class="col-lg-6 text-white showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">-t</span><br/>
+    <span class="link">example_link_file</span> 
+    <span class="socket">example_socket_file</span> 
+    <span class="fifo">example_fifo_file</span> 
+    <span class="audio">example_audio_file.mp3</span> 
+    <span>example_file</span> 
+    <span class="dir">example_dir</span> 
+    <span class="compressed">example_compressed_file.tgz</span> 
+    <span>example_backup_file~</span> 
+    <span>'example file with spaces'</span> 
+    <span class="image">example_image_file.jpg</span> 
+    <span>example_text_file.txt</span> 
+    <span class="exec">example_exec_file.sh</span> 
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark"><strong>-T</strong>, <strong>--tabsize</strong>=<em>COLS</em><br></h3><code class="lead mb-0"><br>assume tab stops at each&nbsp;<em>COLS</em> instead of 8<br></code>
+                </div>
+                <div class="col-lg-6 text-white order-lg-2 showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">-T4</span><br/>
+    <span class="audio">example_audio_file.mp3</span> 
+    <span>example_backup_file~</span> 
+    <span class="compressed">example_compressed_file.tgz</span> 
+    <span class="dir">example_dir</span><br/>
+    <span class="exec">example_exec_file.sh</span> 
+    <span class="fifo">example_fifo_file</span> 
+    <span>example_file</span> 
+    <span>'example file with spaces'</span><br/>
+    <span class="image">example_image_file.jpg</span> 
+    <span class="link">example_link_file</span> 
+    <span class="socket">example_socket_file</span> 
+    <span>example_text_file.txt</span><br/>
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">-u</h3><code class="lead mb-0"><br>with <strong>-lt</strong>: sort by, and show, access time; with <strong>-l</strong>: show<br> access time and sort by name; otherwise: sort by access<br> time, newest first<br></code>
+                </div>
+                <div class="col-lg-6 text-white showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">-u</span><br/>
+    <span class="dir">example_dir</span>
+    <span class="link">example_link_file</span> 
+    <span class="socket">example_socket_file</span> 
+    <span class="fifo">example_fifo_file</span> 
+    <span class="audio">example_audio_file.mp3</span> 
+    <span>example_file</span>  
+    <span class="compressed">example_compressed_file.tgz</span> 
+    <span>example_backup_file~</span> 
+    <span>'example file with spaces'</span> 
+    <span class="image">example_image_file.jpg</span> 
+    <span>example_text_file.txt</span> 
+    <span class="exec">example_exec_file.sh</span> 
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">-U</h3><code class="lead mb-0"><br>do not sort; list entries in directory order<br></code>
+                </div>
+                <div class="col-lg-6 text-white order-lg-2 showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">-U</span><br/>
+    <span class="fifo">example_fifo_file</span> 
+    <span class="link">example_link_file</span> 
+    <span class="image">example_image_file.jpg</span> 
+    <span>example_text_file.txt</span> 
+    <span class="audio">example_audio_file.mp3</span> 
+    <span>example_file</span>  
+    <span class="compressed">example_compressed_file.tgz</span>
+    <span>'example file with spaces'</span>  
+    <span>example_backup_file~</span> 
+    <span class="dir">example_dir</span>
+    <span class="exec">example_exec_file.sh</span> 
+    <span class="socket">example_socket_file</span> 
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">-v</h3><code class="lead mb-0"><br>natural sort of (version) numbers within text<br></code>
+                </div>
+                <div class="col-lg-6 text-white showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">-v</span><br/>
+    <span>'example file with spaces'</span> 
+    <span class="audio">example_audio_file.mp3</span> 
+    <span>example_backup_file~</span> 
+    <span class="compressed">example_compressed_file.tgz</span> 
+    <span class="dir">example_dir</span> 
+    <span class="exec">example_exec_file.sh</span> 
+    <span class="fifo">example_fifo_file</span> 
+    <span>example_file</span> 
+    <span class="image">example_image_file.jpg</span> 
+    <span class="link">example_link_file</span> 
+    <span class="socket">example_socket_file</span> 
+    <span>example_text_file.txt</span> 
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark"><strong>-w</strong>, <strong>--width</strong>=<em>COLS</em><br></h3><code class="lead mb-0"><br>set output width to <em>COLS</em>. 0 means no limit<br></code>
+                </div>
+                <div class="col-lg-6 text-white order-lg-2 showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">-w1</span><br/>
+    <span class="audio">example_audio_file.mp3</span><br/>
+    <span>example_backup_file~</span><br/>
+    <span class="compressed">example_compressed_file.tgz</span><br/>
+    <span class="dir">example_dir</span><br/>
+    <span class="exec">example_exec_file.sh</span><br/>
+    <span class="fifo">example_fifo_file</span><br/>
+    <span>example_file</span><br/>
+    <span>'example file with spaces'</span><br/>
+    <span class="image">example_image_file.jpg</span><br/>
+    <span class="link">example_link_file</span><br/>
+    <span class="socket">example_socket_file</span><br/>
+    <span>example_text_file.txt</span><br/>
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">-x</h3><code class="lead mb-0"><br>list entries by lines instead of by columns<br></code>
+                </div>
+                <div class="col-lg-6 text-white showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">-x</span><br/>
+    <span class="audio">example_audio_file.mp3</span> 
+    <span class="exec">example_exec_file.sh</span> 
+    <span class="image">example_image_file.jpg</span> 
+    <span>example_backup_file~</span> 
+    <span class="fifo">example_fifo_file</span> 
+    <span class="link">example_link_file</span> 
+    <span class="compressed">example_compressed_file.tgz</span> 
+    <span>example_file</span> 
+    <span class="socket">example_socket_file</span> 
+    <span class="dir">example_dir</span> 
+    <span>'example file with spaces'</span> 
+    <span>example_text_file.txt</span> 
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">-X</h3><code class="lead mb-0"><br>sort alphabetically by entry extension<br></code>
+                </div>
+                <div class="col-lg-6 text-white order-lg-2 showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">-X</span><br/>
+    <span>example_backup_file~</span> 
+    <span class="dir">example_dir</span> 
+    <span class="fifo">example_fifo_file</span> 
+    <span>example_file</span> 
+    <span>'example file with spaces'</span> 
+    <span class="link">example_link_file</span> 
+    <span class="socket">example_socket_file</span> 
+    <span class="image">example_image_file.jpg</span> 
+    <span class="audio">example_audio_file.mp3</span> 
+    <span class="exec">example_exec_file.sh</span> 
+    <span class="compressed">example_compressed_file.tgz</span> 
+    <span>example_text_file.txt</span> 
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark"><strong>-Z</strong>, <strong>--context</strong><br></h3><code class="lead mb-0"><br>print any security context of each file<br></code>
+                </div>
+                <div class="col-lg-6 text-white showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">-Z</span><br/>
+    ? <span class="audio">example_audio_file.mp3</span> 
+    ? <span>example_backup_file~</span> 
+    ? <span class="compressed">example_compressed_file.tgz</span> 
+    ? <span class="dir">example_dir</span> 
+    ? <span class="exec">example_exec_file.sh</span> 
+    ? <span class="fifo">example_fifo_file</span> 
+    ? <span>example_file</span> 
+    ? <span>'example file with spaces'</span> 
+    ? <span class="image">example_image_file.jpg</span> 
+    ? <span class="link">example_link_file</span> 
+    ? <span class="socket">example_socket_file</span> 
+    ? <span>example_text_file.txt</span> 
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">-1</h3><code class="lead mb-0"><br>list one file per line. Avoid '\n' with <strong>-q </strong>or <strong>-b</strong><br></code>
+                </div>
+                <div class="col-lg-6 text-white order-lg-2 showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">-1</span><br/>
+    <span class="audio">example_audio_file.mp3</span><br/>
+    <span>example_backup_file~</span><br/>
+    <span class="compressed">example_compressed_file.tgz</span><br/>
+    <span class="dir">example_dir</span><br/>
+    <span class="exec">example_exec_file.sh</span><br/>
+    <span class="fifo">example_fifo_file</span><br/>
+    <span>example_file</span><br/>
+    <span>'example file with spaces'</span><br/>
+    <span class="image">example_image_file.jpg</span><br/>
+    <span class="link">example_link_file</span><br/>
+    <span class="socket">example_socket_file</span><br/>
+    <span>example_text_file.txt</span><br/>
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">--help</h3><code class="lead mb-0"><br>display this help and exit<br></code>
+                </div>
+                <div class="col-lg-6 text-white showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">--help</span><br/>
+    <a href="#">HELP</a><br/>
+    <em>exit</em>
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">--version</h3><code class="lead mb-0"><br>output version information and exit<br></code>
+                </div>
+                <div class="col-lg-6 text-white order-lg-2 showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">--version</span><br/>
+    ls (GNU coreutils) 8.32<br/>
+    <em>exit</em>
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text"><code class="lead mb-0">The SIZE argument is an integer and optional unit (example: 10K is 10*1024). Units are K,M,G,T,P,E,Z,Y (powers of 1024) or KB,MB,... (powers of 1000). Binary prefixes can be used, too: KiB=K, MiB=M, and so on.<br></code></div>
+                <div class="col-lg-6 text-white showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">--help</span><br/>
+    The SIZE argument is an integer and optional unit (example: 10K is 10*1024). Units are K,M,G,T,P,E,Z,Y (powers of 1024) or KB,MB,... (powers of 1000). Binary prefixes can be used, too: KiB=K, MiB=M, and so on.<br/>
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text"><code class="lead mb-0">The TIME_STYLE argument can be full-iso, long-iso, iso, locale, or +FORMAT. FORMAT is interpreted like in date(1). If FORMAT is FORMAT1&lt;newline&gt;FORMAT2, then FORMAT1 applies to non-recent files and FORMAT2 to recent files. TIME_STYLE prefixed with 'posix-' takes effect only outside the POSIX locale. Also the TIME_STYLE environment variable sets the default style to use.<br></code></div>
+                <div class="col-lg-6 text-white order-lg-2 showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">--help</span><br/>
+    The TIME_STYLE argument can be full-iso, long-iso, iso, locale, or +FORMAT. FORMAT is interpreted like in date(1).  If FORMAT is FORMAT1&lt;newline&gt;FORMAT2, then FORMAT1 applies to non-recent files and FORMAT2 to recent files. TIME_STYLE prefixed with 'posix-' takes effect only outside the POSIX locale. Also the TIME_STYLE environment variable sets the default style to use.<br/>
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text"><code class="lead mb-0">Using color to distinguish file types is disabled both by default and with <strong>--color</strong>=<em>never</em>. With <strong>--color</strong>=<em>auto</em>, ls emits color codes only when standard output is connected to a terminal. The LS_COLORS environment variable can change the settings. Use the dircolors command to set it.<br></code></div>
+                <div class="col-lg-6 text-white showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">--help</span><br/>
+    Using color to distinguish file types is disabled both by default and with --color=never.  With --color=auto, ls emits color codes only when standard output is connected to a terminal.  The LS_COLORS environment variable can change the settings.  Use the dircolors command to set it.<br/>
+</code></div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text">
+                    <h3 class="text-dark">Exit status</h3><code class="lead mb-0"><br>0 if OK,<br><br>1 if minor problems (e.g., cannot access subdirectory),<br><br>2 if serious trouble (e.g., cannot access command-line<br>argument).<br></code>
+                </div>
+                <div class="col-lg-6 text-white order-lg-2 showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">--help</span><br/>
+    Exit status:<br/>
+    &nbsp;0  if OK,<br/>
+    &nbsp;1  if minor problems (e.g., cannot access subdirectory),<br/>
+    &nbsp;2  if serious trouble (e.g., cannot access command-line argument).<br/>
+</code></div>
+            </div>
+            <h2 id="author" style="text-align: center;">Author</h2>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text"><code class="lead mb-0">Written by Richard M. Stallman and David MacKenzie.<br></code></div>
+                <div class="col-lg-6 text-white showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">--version</span><br/>
+    Written by Richard M. Stallman and David MacKenzie.<br/>
+</code></div>
+            </div>
+            <h2 id="bugs" style="text-align: center;">Reporting Bugs</h2>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text"><code class="lead mb-0">GNU coreutils online help:<br> &lt;<a href="https://www.gnu.org/software/coreutils/" target="_blank">https://www.gnu.org/software/coreutils/</a>&gt;<br> Report any translation bugs to<br> &lt;<a href="https://translationproject.org/team/" target="_blank">https://translationproject.org/team/</a>&gt;<br></code></div>
+                <div class="col-lg-6 text-white order-lg-2 showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">--help</span><br/>
+    GNU coreutils online help: &lt;https://www.gnu.org/software/coreutils/&gt;<br/>
+</code></div>
+            </div>
+            <h2 id="copyright" style="text-align: center;">Copyright</h2>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text"><code class="lead mb-0">Copyright © 2020 Free Software Foundation, Inc. License GPLv3+:<br> GNU GPL version 3 or later &lt;<a href="#">https://gnu.org//licences/glp.html</a>&gt;.<br>This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law.<br></code></div>
+                <div class="col-lg-6 text-white showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">--version</span><br/>
+    Copyright (C) 2020 Free Software Foundation, Inc.<br/>
+    License GPLv3+: GNU GPL version 3 or later &lt;https://gnu.org/licenses/gpl.html&gt;.<br/>
+    This is free software: you are free to change and redistribute it.<br/>
+    There is NO WARRANTY, to the extent permitted by law.<br/>
+</code></div>
+            </div>
+            <h2 id="also" style="text-align: center;">See Also</h2>
+            <div class="row g-0">
+                <div class="col-lg-6 my-auto order-lg-1 showcase-text"><code class="lead mb-0">Full documentation &lt;<a href="https://www.gnu.org/software/coreutils/ls" target="_blank">https://www.gnu.org/software/coreutils/ls</a>&gt; or available locally via: info '(coreutils) ls invocation'<br></code></div>
+                <div class="col-lg-6 text-white order-lg-2 showcase-img sandbox"><code class="terminal">
+    <span class="arrow">└─</span><span class="dollar">$</span> <span class="cmd">ls</span> <span class="opts">--help</span><br/>
+Full documentation &lt;https://www.gnu.org/software/coreutils/ls&gt; or available locally via: info '(coreutils) ls invocation'<br/>
+</code></div>
+            </div>
+            <h2 id="colophon" style="text-align: center;">Colophon</h2>
+            <div class="row g-0" style="padding: 1em;">
+                <div class="col"><code class="lead mb-0">This page is part of the <em>coreutils</em> (basic file, shell and text manipulation utilities) project. Information about the project can be found at ⟨<a href="http://www.gnu.org/software/coreutils/" target="_blank">http://www.gnu.org/software/coreutils/</a>⟩. If you have a bug report for this manual page, see ⟨<a href="http://www.gnu.org/software/coreutils/" target="_blank">http://www.gnu.org/software/coreutils/</a>⟩. This page was obtained from the tarball coreutils-8.32.tar.xz fetched from ⟨<a href="http://ftp.gnu.org/gnu/coreutils/" target="_blank">http://ftp.gnu.org/gnu/coreutils/</a>⟩ on 2021-08-27. If you discover any rendering problems in this HTML version of the page, or you believe there is a better or more up-to-date source for the page, or you have corrections or improvements to the<br> information in this COLOPHON (which is <em>not</em> part of the original manual page), send a mail to man-pages@man7.org<br></code></div>
+            </div>
+        </div>
+    </section>
+    <div class="container text-center" style="margin-bottom: 3em;display: flex;justify-content: center;">
+        <div class="row text-dark" style="flex-wrap: nowrap;justify-content: space-between;align-items: center;width: inherit;">
+            <div class="col-md-4" style="width: 40%;">
+                <p class="fs-4 fw-bold">GNU coreutils 8.32</p>
+            </div>
+            <div class="col-md-4" style="width: 20%;text-align: center;">
+                <p class="fs-4 fw-bold" style="text-align: center;">March 2020</p>
+            </div>
+            <div class="col-md-4" style="width: 40%;">
+                <p class="fs-4 fw-bold">LS(1)</p>
+            </div>
+        </div>
+    </div>
+    <hr class="bg-dark">
+    <section class="text-center text-white call-to-action bg-dark" style="padding: 2rem;">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 mx-auto position-relative"><code class="page text-light" style="color: var(--bs-gray-200);word-wrap: break-word;">Pages that refer to this page:<br><a class="page" href="https://man7.org/linux/man-pages/man1/column.1.html" target="_blank">column(1)</a>,&nbsp;<a class="page" href="https://man7.org/linux/man-pages/man1/find.1.html" target="_blank">find(1)</a>,&nbsp;<a class="page" href="https://man7.org/linux/man-pages/man1/namei.1.html" target="_blank">namei(1)</a>,&nbsp;<a class="page" href="https://man7.org/linux/man-pages/man2/stat.2.html" target="_blank">stat(2)</a>,&nbsp;<a class="page" href="https://man7.org/linux/man-pages/man2/statx.2.html" target="_blank">statx(2)</a>,&nbsp;<a class="page" href="https://man7.org/linux/man-pages/man3/glob.3.html" target="_blank">glob(3)</a>,&nbsp;<a class="page" href="https://man7.org/linux/man-pages/man3/strverscmp.3.html" target="_blank">strverscmp(3)</a>,&nbsp;<a class="page" href="https://man7.org/linux/man-pages/man5/core.5.html" target="_blank">core(5)</a>,&nbsp;<a class="page" href="https://man7.org/linux/man-pages/man5/dir_colors.5.html" target="_blank">dir_colors(5)</a>,&nbsp;<a class="page" href="https://man7.org/linux/man-pages/man5/passwd.5.html" target="_blank">passwd(5)</a>,&nbsp;<a class="page" href="https://man7.org/linux/man-pages/man5/proc.5.html" target="_blank">proc(5)</a>,&nbsp;<a class="page" href="https://man7.org/linux/man-pages/man7/mq_overview.7.html" target="_blank">mq_overview(7)</a>,&nbsp;<a class="page" href="https://man7.org/linux/man-pages/man7/symlink.7.html" target="_blank">symlink(7)</a>,&nbsp;<a class="page" href="https://man7.org/linux/man-pages/man8/lsblk.8.html" target="_blank">lsblk(8)</a>,&nbsp;<a class="page" href="https://man7.org/linux/man-pages/man8/lsof.8.html" target="_blank">lsof(8)</a>,&nbsp;<a class="page" href="https://man7.org/linux/man-pages/man8/setfiles.8.html" target="_blank">setfiles(8)</a></code></div>
+            </div>
+        </div>
+    </section>
+    <hr class="opacity-75 bg-dark" size="5">
+    <footer class="bg-dark p-3" style="background: rgb(52, 58, 64);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 text-center text-lg-start my-auto h-100">
+                    <p class="text-light">HTML rendering created 2021-08-27 by <a href="https://man7.org/mtk/index.html" target="_blank">Michael Kerrisk</a>, author of&nbsp;<a href="https://man7.org/tlpi/" target="_blank">The Linux Programming Interface</a>, maintainer of the&nbsp;<a href="https://www.kernel.org/doc/man-pages/" target="_blank">Linux man-pages project</a>.<br></p>
+                    <p class="text-light">For details of in-depth&nbsp;<strong>Linux/UNIX system programming training courses</strong><br> that I teach, look <a href="https://man7.org/training/" target="_blank">here</a>.<br></p>
+                    <p class="text-light">Hosting by <a href="https://www.jambit.com/index_en.html" target="_blank">jambit GmbH</a>.<br></p>
+                    <p class="text-muted small mb-4 mb-lg-0">© Linux Manual 2022. All Rights Reserved.</p>
+                </div>
+                <div class="col-lg-6 text-center text-lg-end my-auto h-100"><img class="ligh" src="https://man7.org/tlpi/cover/TLPI-front-cover-vsmall.png" loading="lazy"></div>
+            </div>
+        </div>
+    </footer><a class="scroll-button" href="#"><button class="btn btn-primary btn-info" type="button" style="padding: 1em 1.5em;border-radius: 50%;"><i class="fas fa-level-up-alt"></i></button></a>
+</body>
+
+</html>

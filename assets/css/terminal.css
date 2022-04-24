@@ -1,0 +1,94 @@
+.sandbox {
+  --terminal-bg-clr: #0c0c0c;
+  --terminal-text-clr: #ccc;
+  --terminal-dir-clr: #3b78ff;
+  --terminal-dollar-clr: #3478dc;
+  --terminal-arrow-clr: #13a10e;
+  --terminal-exec-clr: #16c60c;
+  --terminal-cmd-clr: #13750d;
+  --terminal-opts-clr: #881798;
+  --terminal-photo-clr: #b4009e;
+  --terminal-compressed-clr: #e74856;
+  --terminal-fifo-clr: #c19c00;
+  --terminal-audio-clr: #3a96dd;
+  --terminal-socket-clr: #b10087;
+  --terminal-link-clr: #61d6d6;
+  width: 100%;
+  background-color: var(--terminal-bg-clr);
+  display: flex;
+  align-items: center;
+}
+
+.terminal {
+  display: block;
+  color: var(--terminal-text-clr);
+  background-color: var(--terminal-bg-clr);
+  width: 100%;
+  height: max-content;
+  padding: 1rem;
+}
+
+.terminal span {
+  display: inline-flex;
+  flex-wrap: nowrap;
+}
+
+.terminal .arrow {
+  color: var(--terminal-arrow-clr);
+}
+
+.terminal .dollar {
+  color: var(--terminal-dollar-clr);
+}
+
+.terminal .cmd {
+  color: var(--terminal-cmd-clr);
+}
+
+.terminal .opts {
+  color: var(--terminal-opts-clr);
+}
+
+.terminal .dir {
+  color: var(--terminal-dir-clr);
+}
+
+.terminal .exec {
+  color: var(--terminal-exec-clr);
+}
+
+.terminal .image {
+  color: var(--terminal-photo-clr);
+}
+
+.terminal .compressed {
+  color: var(--terminal-compressed-clr);
+}
+
+.terminal .audio {
+  color: var(--terminal-audio-clr);
+}
+
+.terminal .fifo {
+  color: var(--terminal-fifo-clr);
+}
+
+.terminal .link {
+  color: var(--terminal-link-clr);
+}
+
+.terminal .socket {
+  color: var(--terminal-socket-clr);
+}
+
+.terminal a {
+  font-style: italic;
+  color: var(--terminal-link-clr);
+}
+
+@media (min-width: 990px) {
+  .sandbox {
+    width: 50%;
+  }
+}
+

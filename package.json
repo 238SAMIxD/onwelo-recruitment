@@ -1,0 +1,32 @@
+{
+  "name": "onwelo-recruitment",
+  "version": "1.0.0",
+  "description": "Zadanie rekrutacyjne na Front-End Developera Onwelo",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/238SAMIxD/onwelo-recruitment.git"
+  },
+  "keywords": [
+    "front-end",
+    "html",
+    "css",
+    "js",
+    "man"
+  ],
+  "author": "Samuel Jędrzejewski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/238SAMIxD/onwelo-recruitment/issues"
+  },
+  "homepage": "https://github.com/238SAMIxD/onwelo-recruitment#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "nodejs": "0.0.0",
+    "open": "^8.4.0",
+    "path": "^0.12.7"
+  }
+}

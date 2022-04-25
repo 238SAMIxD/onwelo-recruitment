@@ -189,7 +189,7 @@ Do uruchomienia środowiska potrzebny jest _NPM_. Aby pobrać moduły należy u�
 npm install
 ```
 
-Następujące zależności zostaną pobrane:
+Pobrane zostaną następujące zależności:
 
 ```json
 "dependencies": {
@@ -202,7 +202,7 @@ Następujące zależności zostaną pobrane:
 
 ### Włączanie
 
-Skrypt jest prosty do włączenia za pomocą komendy `start` poprzez _npm_. Można użyć jedną z następujących komend:
+Skrypt jest prosty do włączenia za pomocą komendy `start` poprzez _npm_. Można użyć jednej z następujących komend:
 
 ```bash
 npm start
@@ -233,4 +233,4 @@ app.listen(port, host, () => {
 
 ### Podgląd strony online
 
-Aby przyspieszyć ogląd zadania, rozwiązanie wysłałem pliki na swój serwer, dzięki czemu można obejrzeć stronę pod adresem https://zgrajsie.com/onwelo-recruitment/
+Aby przyspieszyć ogląd zadania, rozwiązanie wysłałem na swój serwer, dzięki czemu można obejrzeć stronę pod adresem https://zgrajsie.com/onwelo-recruitment/

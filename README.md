@@ -60,7 +60,7 @@ Poniżej znajduje się przykładowy kod obrazujący implementację kolorów w wi
   --terminal-bg-clr: #0c0c0c;
   --terminal-text-clr: #ccc;
   --terminal-dir-clr: #3b78ff;
-  (...)
+  /* (...) */
   background-color: var(--terminal-bg-clr);
   display: flex;
   align-items: center;
@@ -98,7 +98,7 @@ Poniżej znajduje się przykładowy kod obrazujący implementację kolorów w wi
 .terminal .dir {
   color: var(--terminal-dir-clr);
 }
-(...)
+/* (...) */
 ```
 
 Wszystkie style terminala znajdują się w oddzielnym pliku _CSS_ `terminal.css`.
